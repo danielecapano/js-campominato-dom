@@ -5,6 +5,10 @@ const gridElement = document.querySelector(".grid");
 btnPlay.addEventListener("click", () => {
   const matrixGrid = parseInt(levelSelect.value ** 2);
 
+  const bombsArray = getArrayofIntRandom(1, matrixGrid, 16);
+
+  console.log(bombsArray);
+
   gridElement.innerHTML = "";
 
   createGrid(matrixGrid);
@@ -35,6 +39,25 @@ function createBox(parent, columnsGrid) {
 }
 
 function boxOnClick() {
-  this.classList.add("selected");
+  this.classList.add("bad");
   console.log(this.innerHTML);
+}
+
+function getArrayofIntRandom(min, max, number) {
+  const array = [];
+
+  while (array.length < number) {
+    const n = getRandomInt(min, max);
+
+    if (!array.includes(n)) {
+      array.push(n);
+    }
+  }
+  return array;
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
 }
