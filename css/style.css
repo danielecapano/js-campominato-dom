@@ -77,7 +77,12 @@ select {
     width: calc(100% / 10);
 }
 
-.selected {
+.good {
     background-color: #007FFF;
+    color: #FFF;
+}
+
+.bad {
+    background-color: #e7410e;
     color: #FFF;
 }
