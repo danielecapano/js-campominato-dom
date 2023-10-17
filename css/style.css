@@ -86,3 +86,7 @@ select {
     background-color: #e7410e;
     color: #FFF;
 }
+
+.noclick {
+    pointer-events: none;
+}
